@@ -45,7 +45,7 @@ namespace OOPROG3_2
         public int GetAge()
         {
             int age = 0;
-
+            age = dateOfBirth.Year-DateTime.Now.Year;
             return age;
         }
         public string GetName()
@@ -71,20 +71,20 @@ namespace OOPROG3_2
 
         public void Withdraw(double amount)
         {
-            balance = balance + amount;
+            balance = balance - amount;
 
         }
 
         public void Deposit(double amount)
         {
-            balance = balance - amount;
+            balance = balance + amount;
 
         }
 
         public void TransferTo(double amount, BankAccout2 another)
         {
             balance = balance - amount;
-            another.Withdraw(amount);
+            another.Deposit(amount);
         }
 
         public string Show()
