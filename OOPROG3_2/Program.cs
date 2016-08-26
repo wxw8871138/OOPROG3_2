@@ -14,7 +14,7 @@ namespace OOPROG3_2
             Customer z = new Customer("Kim Lee Keng", "2, Rich View", "XXX9F", new DateTime(1993, 4, 25));
             BankAccout2 a = new BankAccout2("001-001-001", y, 2000);
             BankAccout2 b = new BankAccout2("001-001-002", z, 5000);
-            
+
             Console.WriteLine(a.Show());
             Console.WriteLine(b.Show());
             a.Deposit(100);
@@ -45,7 +45,7 @@ namespace OOPROG3_2
         public int GetAge()
         {
             int age = 0;
-            age = dateOfBirth.Year-DateTime.Now.Year;
+            age =  DateTime.Now.Year-dateOfBirth.Year ;
             return age;
         }
         public string GetName()
@@ -53,7 +53,10 @@ namespace OOPROG3_2
             return name;
         }
 
-
+        public string GetAddress()
+        {
+            return address;
+        }
     }
 
     class BankAccout2
@@ -90,7 +93,7 @@ namespace OOPROG3_2
         public string Show()
         {
             string info;
-            info = acountHolder.GetName() + ":" + Convert.ToString(balance);
+            info = "address = " + acountHolder.GetAddress() + " , " + "name = " + acountHolder.GetName() + " , " + "balance = " + Convert.ToString(balance) + " , " + "age = " + Convert.ToString(acountHolder.GetAge());
             return info;
         }
     }
